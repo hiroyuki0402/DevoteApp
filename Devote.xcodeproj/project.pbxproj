@@ -8,21 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		3B58E9712AF420F0007B1914 /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E9702AF420F0007B1914 /* DevoteApp.swift */; };
-		3B58E9732AF420F0007B1914 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E9722AF420F0007B1914 /* ContentView.swift */; };
 		3B58E9752AF420F1007B1914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B58E9742AF420F1007B1914 /* Assets.xcassets */; };
 		3B58E9782AF420F1007B1914 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B58E9772AF420F1007B1914 /* Preview Assets.xcassets */; };
-		3B58E97A2AF420F1007B1914 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E9792AF420F1007B1914 /* Persistence.swift */; };
 		3B58E97D2AF420F1007B1914 /* Devote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E97B2AF420F1007B1914 /* Devote.xcdatamodeld */; };
+		3B58E98A2AF4E318007B1914 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E9892AF4E318007B1914 /* HomeView.swift */; };
+		3B58E98C2AF4E346007B1914 /* Sound in Resources */ = {isa = PBXBuildFile; fileRef = 3B58E98B2AF4E346007B1914 /* Sound */; };
+		3B58E9ED2AF6087D007B1914 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E9EC2AF6087D007B1914 /* PersistenceController.swift */; };
+		3B58E9EF2AF6133E007B1914 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E9EE2AF6133E007B1914 /* ContentView.swift */; };
+		3B58E9F12AF63B21007B1914 /* View-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E9F02AF63B21007B1914 /* View-Extension.swift */; };
+		3B58E9F32AF64ADF007B1914 /* Array-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E9F22AF64ADF007B1914 /* Array-Extension.swift */; };
+		3B58E9F62AF6507E007B1914 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B58E9F52AF6507E007B1914 /* BackgroundImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3B58E96D2AF420F0007B1914 /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B58E9702AF420F0007B1914 /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
-		3B58E9722AF420F0007B1914 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B58E9742AF420F1007B1914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B58E9772AF420F1007B1914 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3B58E9792AF420F1007B1914 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3B58E97C2AF420F1007B1914 /* Devote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Devote.xcdatamodel; sourceTree = "<group>"; };
+		3B58E9892AF4E318007B1914 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3B58E98B2AF4E346007B1914 /* Sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sound; sourceTree = "<group>"; };
+		3B58E98D2AF4E4D9007B1914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3B58E9EC2AF6087D007B1914 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		3B58E9EE2AF6133E007B1914 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3B58E9F02AF63B21007B1914 /* View-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-Extension.swift"; sourceTree = "<group>"; };
+		3B58E9F22AF64ADF007B1914 /* Array-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array-Extension.swift"; sourceTree = "<group>"; };
+		3B58E9F52AF6507E007B1914 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +66,13 @@
 		3B58E96F2AF420F0007B1914 /* Devote */ = {
 			isa = PBXGroup;
 			children = (
+				3B58E98D2AF4E4D9007B1914 /* Info.plist */,
 				3B58E9702AF420F0007B1914 /* DevoteApp.swift */,
-				3B58E9722AF420F0007B1914 /* ContentView.swift */,
-				3B58E9742AF420F1007B1914 /* Assets.xcassets */,
-				3B58E9792AF420F1007B1914 /* Persistence.swift */,
-				3B58E97B2AF420F1007B1914 /* Devote.xcdatamodeld */,
+				3B58E9862AF4E1D4007B1914 /* Extension */,
+				3B58E9852AF4E1CD007B1914 /* Model */,
+				3B58E9842AF4E1C7007B1914 /* View */,
+				3B58E9832AF4E1BF007B1914 /* ViewModel */,
+				3B58E9872AF4E2A2007B1914 /* Supporting */,
 				3B58E9762AF420F1007B1914 /* Preview Content */,
 			);
 			path = Devote;
@@ -71,6 +84,82 @@
 				3B58E9772AF420F1007B1914 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3B58E9832AF4E1BF007B1914 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B58E9842AF4E1C7007B1914 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B58E9882AF4E2F4007B1914 /* Home */,
+				3B58E9EE2AF6133E007B1914 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B58E9852AF4E1CD007B1914 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B58E9902AF4E8A3007B1914 /* CoreData */,
+				3B58E98F2AF4E895007B1914 /* Data */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3B58E9862AF4E1D4007B1914 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3B58E9F02AF63B21007B1914 /* View-Extension.swift */,
+				3B58E9F22AF64ADF007B1914 /* Array-Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3B58E9872AF4E2A2007B1914 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				3B58E98B2AF4E346007B1914 /* Sound */,
+				3B58E9742AF420F1007B1914 /* Assets.xcassets */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		3B58E9882AF4E2F4007B1914 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3B58E9892AF4E318007B1914 /* HomeView.swift */,
+				3B58E9F42AF65066007B1914 /* Component */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3B58E98F2AF4E895007B1914 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3B58E9902AF4E8A3007B1914 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3B58E97B2AF420F1007B1914 /* Devote.xcdatamodeld */,
+				3B58E9EC2AF6087D007B1914 /* PersistenceController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		3B58E9F42AF65066007B1914 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				3B58E9F52AF6507E007B1914 /* BackgroundImageView.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B58E98C2AF4E346007B1914 /* Sound in Resources */,
 				3B58E9782AF420F1007B1914 /* Preview Assets.xcassets in Resources */,
 				3B58E9752AF420F1007B1914 /* Assets.xcassets in Resources */,
 			);
@@ -143,10 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B58E97A2AF420F1007B1914 /* Persistence.swift in Sources */,
-				3B58E9732AF420F0007B1914 /* ContentView.swift in Sources */,
 				3B58E97D2AF420F1007B1914 /* Devote.xcdatamodeld in Sources */,
+				3B58E9EF2AF6133E007B1914 /* ContentView.swift in Sources */,
+				3B58E9F62AF6507E007B1914 /* BackgroundImageView.swift in Sources */,
+				3B58E9F32AF64ADF007B1914 /* Array-Extension.swift in Sources */,
+				3B58E9F12AF63B21007B1914 /* View-Extension.swift in Sources */,
+				3B58E98A2AF4E318007B1914 /* HomeView.swift in Sources */,
 				3B58E9712AF420F0007B1914 /* DevoteApp.swift in Sources */,
+				3B58E9ED2AF6087D007B1914 /* PersistenceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,9 +377,9 @@
 				DEVELOPMENT_TEAM = MP9J987NN4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Devote/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,9 +406,9 @@
 				DEVELOPMENT_TEAM = MP9J987NN4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Devote/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
