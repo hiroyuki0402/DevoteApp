@@ -16,6 +16,8 @@ struct HomeView: View {
         task.isEmpty
     }
 
+    @State private var isShowNewTaskItem: Bool = false
+
     /// 現在のビューコンテキストへの参照を保持するこれにより、このビューがCore Dataの操作を行えるようになる
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -42,46 +44,43 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                /// メイン
                 VStack {
-                    VStack(spacing: 20) {
-                        /// 入力欄
-                        TextField("New Task", text: $task)
-                            .padding()
-                            .background(Color(uiColor: .systemGray6))
-                            .cornerRadius(10)
+                    /// ヘッダー
+                    HStack(spacing: 10) {
+                        ///タイトル
+                        Text("タスク")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .fontWeight(.heavy)
+                            .padding(4)
+                        Spacer()
 
-                        /// ボタン
-                        Button {
-                            addItem()
-                        } label: {
-                            Spacer()
-                            Text("SAVE")
-                            Spacer()
-                        }
-                        .padding()
-                        .disabled(isButtonDisabled)
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .background(isButtonDisabled ? Color(uiColor: .lightGray): Color.pink)
-                        .cornerRadius(10)
+                        ///編集ボタン
+                        EditButton()
+                          .font(.system(size: 16, weight: .semibold, design: .rounded))
+                          .padding(.horizontal, 10)
+                          .frame(minWidth: 70, minHeight: 24)
+                          .background(
+                            Capsule().stroke(Color.white, lineWidth: 2)
+                          )
                     }
-                    .padding(.top, 20)
-                    .padding(.horizontal, 20)
+                    .padding()
+                    .foregroundColor(.white)
+
+                    Spacer(minLength: 80)
+                    /// 新しいタスク作成ボタン
+                    Button {
+                        isShowNewTaskItem = true
+                        playSound(sound: "sound-ding", type: "mp3")
+                    } label: {
+                        AddTaskButtonView()
+                    }
+
+                    /// タスク
+
                     List {
                         ForEach(items) { item in
-                            NavigationLink {
-                                VStack {
-                                    Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                                }
-                            } label: {
-                                VStack(alignment: .leading) {
-                                    Text(item.task ?? "")
-                                        .font(.system(.title2, design: .rounded))
-                                        .fontWeight(.heavy)
-                                        .padding(.vertical, 12)
-                                }//: VStack
-
-                            }//: NavigationLink
+                            ListRowItemView(item: item)
                         }
                         .onDelete(perform: deleteItems)
                     }//: List
@@ -92,13 +91,21 @@ struct HomeView: View {
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                     .frame(maxWidth: 640)
                 }//: VStack
+                .blur(radius: isShowNewTaskItem ? 8.0: 0.5)
+                .transition(.move(edge: .bottom))
+                .animation(.easeOut(duration: 0.5), value: !isShowNewTaskItem)
+                if isShowNewTaskItem {
+                    BlankView(backgroundColor: .black, backgroundOpacity: 0.3)
+                    NewTaskItemView(isShowing: $isShowNewTaskItem)
+                }
             }//: ZStack
             .onAppear {
                 UITableView.appearance().backgroundColor = .clear
             }
-            .navigationBarTitle("日々のタスク", displayMode: .large)
+            .navigationBarHidden(true)
             .background(
                 BackgroundImageView()
+                    .blur(radius: isShowNewTaskItem ? 8.0: 0.5, opaque: false)
             )
             .background(
                 [Color.pink, Color.blue]
@@ -111,30 +118,6 @@ struct HomeView: View {
     }//: ボディー
 
     // MARK: - メソッド
-
-    /// 新しいアイテムを追加するメソッド
-    private func addItem() {
-        withAnimation {
-            // 新しいItemエンティティインスタンスを作成し、現在の日時を設定する
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-            newItem.task = task
-            newItem.complision = false
-            newItem.id = UUID()
-
-            // ビューコンテキストを介して変更を保存しようとする
-            do {
-                try viewContext.save()
-            } catch {
-                // エラーが発生した場合は、クラッシュ前に詳細情報を出力する
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-
-            task = ""
-            hideKeyboard()
-        }
-    }
 
     /// 指定されたオフセットでアイテムを削除するメソッド
     /// - Parameter offsets: 削除するアイテムのインデックスセット
